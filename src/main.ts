@@ -4,7 +4,7 @@ import { LoginComponent } from './app/login.component';
 import { DashboardComponent } from './app/dashboard.component';
 import { provideRouter, Routes } from '@angular/router';
 import { authGuard } from './app/auth.guard';
-
+import { RouterOutlet } from '@angular/router';
 const routes: Routes = [
   { path: '', redirectTo: '/login', pathMatch: 'full' },
   { path: 'login', component: LoginComponent },
@@ -18,7 +18,7 @@ const routes: Routes = [
 @Component({
   selector: 'app-root',
   standalone: true,
-  imports: [LoginComponent],
+  imports: [RouterOutlet],
   template: `<router-outlet></router-outlet>`
 })
 export class App {
